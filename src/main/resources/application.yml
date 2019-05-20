@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  thymeleaf:
+         prefix: classpath:/templates/
+  application:
+    name: User-service
+  datasource:
+    url: jdbc:mysql://118.31.70.143:3306/dbgirl?zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 118.31.70.143
+    port: 6379
+    password:
+  mail:
+    host: smtp.163.com #发送邮件服务器
+    username: 17765124320@163.com #发送邮件的邮箱地址
+    password: swm123456 #客户端授权码，不是邮箱密码,网易的是自己设置的
+    properties.mail.smtp.port: 994 #465或者994
+    from: 17765124320@163.com # 发送邮件的地址，和上面username一致
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+  jpa:
+    hibernate:
+      ddl-auto: update  # 第一次建表create  后面用update，要不然每次重启都会新建表
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  file: log/log.log
